@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="refresh" content="5000" >
+
+<script>
+
+var d,h,m,s,animate;
+
+function init(){
+    d=new Date();
+    h=d.getHours();
+    m=d.getMinutes();
+    s=d.getSeconds();
+    clock();
+};
+
+function clock(){
+    s++;
+    if(s==60){
+        s=0;
+        m++;
+        if(m==60){
+            m=0;
+            h++;
+            if(h==24){
+                h=0;
+            }
+        }
+    }
+    $('sec',s);
+    $('min',m);
+    $('hr',h);
+    animate=setTimeout(clock,1000);
+};
+
+function $(id,val){
+    if(val<10){
+        val='0'+val;
+    }
+    document.getElementById(id).innerHTML=val;
+};
+
+window.onload=init;
+</script>
+<style>
+body {
+	background-color: black;
+	margin: 0;
+}
+    #wrap { width: 790px; height: 620px; padding: 0; margin-top: -178px; overflow: hidden; }
+   
+    #frame {
+    z-index: -1;
+        -ms-zoom: 1;
+        -moz-transform: scale(1.4);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(1.4);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(1.4);
+        -webkit-transform-origin: 0 0;
+    }
+    .vaer{
+        margin-left: 300px;
+        margin-top: 9px;
+    }
+        .clock { 
+    background-color: black;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color: white;	     
+    text-align:left; }
+    .tekst { 
+    background-color: black;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: sans-serif;
+    color: white;	     
+    text-align:left; }
+    .black5{
+        background-color: black;
+        width: 25px;
+        position: fixed;
+        margin-top: -86px;
+        margin-left: 765px;
+        height: 67px;
+         } 
+    .black4{
+        background-color: black;
+        width: 25px;
+        position: fixed;
+        margin-top: -156px;
+        margin-left: 765px;
+        height: 67px;
+         } 
+    
+    .black{
+        background-color: black;
+        width: 25px;
+        position: fixed;
+        margin-top: -226px;
+        margin-left: 765px;
+        height: 66.5px;
+         } 
+        .black2{
+        background-color: black;
+        width: 25px;
+        position: fixed;
+        margin-top: -296px;
+        margin-left: 765px;
+        height: 67px;
+         } 
+        .black3{
+        background-color: black;
+        width: 25px;
+        position: fixed;
+        margin-top: -366px;
+        margin-left: 765px;
+        height: 67px;
+         } 
+    
+</style>
+</head>
+<body>
+
+
+<div id="wrap">
+<iframe id="frame" src="http://mon.ruter.no/monitor/3011030/Munkelia?rows=5" style="position: relative; left: 20px; top: px; border: 0px; height:480px; width:790px;"></iframe>
+</div>
+
+   
+        
+        
+        
+        
+        <div class="clock" style="position: absolute; left: 0px; top: 20px; border: 0px; height:70px; width:790px;"> 
+            
+            <span style="margin-left: 480px;" id="hr">00</span>
+            <span> : </span>
+            <span id="min">00</span>
+            <span> : </span>
+            <span id="sec">00</span>
+</div>
+
+	<br>
+</div>
+<div class="black"><br></div>
+<div class="black2"><br></div>
+<div class="black3"><br></div>
+<div class="black4"><br></div>
+<div class="black5"><br></div>
+    
+             <div 
+    style="background-image:
+           url('https://w.bookcdn.com/weather/picture/32_18503_1_12_000000_250_000000_ffffff_ffffff_1_000000_ffffff_0_6.png?scode=124&domid=&anc_id=3830'); 
+    width:160px; 
+    height:80px; 
+    position:fixed;
+    margin-top: -450px;
+    margin-left: 30px;
+    background-position:top;">&nbsp;</div>
+             <div 
+    style="background-image:
+           url('https://w.bookcdn.com/weather/picture/32_18503_1_12_000000_250_000000_ffffff_ffffff_1_000000_ffffff_0_6.png?scode=124&domid=&anc_id=3830'); 
+    width:160px; 
+    height:80px; 
+    position:fixed; 
+           margin-top: -450px;
+    margin-left: 190px;
+    background-position:bottom;">&nbsp;</div>
+</body></html>
